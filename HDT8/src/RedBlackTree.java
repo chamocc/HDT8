@@ -97,21 +97,7 @@ public class RedBlackTree {
         tio.setRelacion(abuelo,0);
     }
     
-    private void cambiarColor(TreeNode padre){
-        /*TreeNode abuelo, tio, bisabuelo;
-        abuelo=padre.getRelacion(0);
-        tio=abuelo.getRelacion(1);
-        bisabuelo=abuelo.getRelacion(0);
-        
-        padre.flipColor();
-        tio.flipColor();
-        abuelo.flipColor();
-        
-        if(abuelo.getRelacion(0).getColor()==true){
-            
-        }*/
-        
-        
+    private void cambiarColor(TreeNode padre){  
         TreeNode abuelo, tio, bisabuelo;
         abuelo=padre.getRelacion(0);
         bisabuelo=abuelo.getRelacion(0);
@@ -126,7 +112,37 @@ public class RedBlackTree {
         abuelo.flipColor();
         
         if(abuelo.getRelacion(0).getColor()==true){
+            boolean single=false;
+            boolean derecho=false;
+            TreeNode tioBisabuelo, tioabuelo;
+            if(bisabuelo.getRelacion(0).getRelacion(2)==bisabuelo){
+                derecho=false;
+                tioBisabuelo=bisabuelo.getRelacion(0).getRelacion(1);
+            }else{
+                derecho=true;
+                tioBisabuelo=bisabuelo.getRelacion(0).getRelacion(2);
+            }
+            if(bisabuelo.getRelacion(2)==abuelo){
+                single=true;
+                tioabuelo=bisabuelo.getRelacion(1);
+            }else{
+                single=false;
+                tioabuelo=bisabuelo.getRelacion(2);
+            }
             
+            if(tioBisabuelo.getColor()==true){
+                cambiarColor(bisabuelo);
+            }else{
+                if(single==true){
+                    singleRotation(bisabuelo.getRelacion(0), derecho);
+                }else{
+                    doubleRotation(bisabuelo.getRelacion(0), derecho);
+                }
+            }
         }
+    }
+    
+    public void incertarNodo(Word dato){
+        
     }
 }

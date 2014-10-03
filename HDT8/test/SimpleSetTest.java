@@ -42,13 +42,13 @@ public class SimpleSetTest {
     @Test
     public void testGet() {
         System.out.println("get");
-        Word word = null;
+        Word word = new Word("Buki", "sustantivo");
         SimpleSet instance = new SimpleSet();
-        Word expResult = null;
+        instance.add(word);
+        Word expResult = new Word ("Buki", "sustantivo");
         Word result = instance.get(word);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -57,11 +57,13 @@ public class SimpleSetTest {
     @Test
     public void testAdd() {
         System.out.println("add");
-        Word wordObject = null;
+        Word wordObject = new Word ("Buki","sustantivo");
         SimpleSet instance = new SimpleSet();
         instance.add(wordObject);
+        Word expResult = instance.get(wordObject);
+        assertEquals(expResult, wordObject);
+        
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }

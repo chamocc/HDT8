@@ -23,7 +23,7 @@ class WordSetFactory {
 	    if (tipo == 1)
 		return new SimpleSet();
             if (tipo == 2)
-                return new RedBlacktree();
+                return new RedBlackTree();
             if (tipo == 3)
                 return new SplayTree();
             if (tipo == 4)

@@ -10,19 +10,19 @@
  */
 public class SplayTreeSet implements WordSet {
     
-    public SplayTreeSet()
-    {
+    private SplayTree arbol;
     
+    public SplayTreeSet(){
+        arbol=new SplayTree();
     }
-    
+
     @Override
     public void add(Word wordObject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       arbol.insert(wordObject);
     }
 
     @Override
     public Word get(Word word) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (Word) arbol.find(word);
     }
-    
 }

@@ -8,11 +8,13 @@
  *
  * @author Ed. Chamo
  */
-public class HashMapSet implements WordSet {
-    public HashMapSet()
+public class SplayTreeSet implements WordSet {
+    
+    public SplayTreeSet()
     {
     
     }
+    
     @Override
     public void add(Word wordObject) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

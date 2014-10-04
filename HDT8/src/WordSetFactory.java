@@ -23,13 +23,13 @@ class WordSetFactory {
 	    if (tipo == 1)
 		return new SimpleSet();
             if (tipo == 2)
-                return new RedBlackTree();
+                return new RedBlackTreeSet();
             if (tipo == 3)
-                return new SplayTree();
+                return new SplayTreeSet();
             if (tipo == 4)
-                return (WordSet) new HashMap();
+                return new HashMapSet();
             if (tipo == 5)
-                return (WordSet) new TreeMap();
+                return new TreeMapSet();
             
             else
 			

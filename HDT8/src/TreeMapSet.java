@@ -8,6 +8,20 @@
  *
  * @author Ed. Chamo
  */
-public class TreeMapSet {
+public class TreeMapSet implements WordSet {
+    public TreeMapSet()
+    {
+    
+    }
+    
+    @Override
+    public void add(Word wordObject) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Word get(Word word) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

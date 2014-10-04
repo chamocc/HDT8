@@ -8,6 +8,21 @@
  *
  * @author Daniel
  */
-public class RedBlackTreeSet {
+public class RedBlackTreeSet implements WordSet {
+    private RedBlackTree arbol;
+    
+    public RedBlackTreeSet(){
+        arbol=new RedBlackTree();
+    }
+
+    @Override
+    public void add(Word wordObject) {
+       arbol.incertarDato(wordObject);
+    }
+
+    @Override
+    public Word get(Word word) {
+        return arbol.buscarDato(word);
+    }
     
 }

@@ -201,7 +201,7 @@ public class RedBlackTree {
         }
     }
     
-    private Word buscarNodo(Word _dato, TreeNode _raiz){
+     private Word buscarNodo(Word _dato, TreeNode _raiz){
         Word datoObtenido=null;
         if(_raiz.getDato().compareTo(_dato)==0){
             datoObtenido=_raiz.getDato();
@@ -225,3 +225,4 @@ public class RedBlackTree {
         return buscarNodo(_dato, raiz);        
     }
 }
+

@@ -205,35 +205,4 @@ public class SplayTree
 	t.right = header.left;
 	root = t;
     }
-
-    // test code stolen from Weiss
-    public static void main(String [ ] args)
-    {
-        SplayTree t = new SplayTree();
-        final int NUMS = 40000;
-        final int GAP  =   307;
-
-        System.out.println("Checking... (no bad output means success)");
-
-        for(int i = GAP; i != 0; i = (i + GAP) % NUMS)
-            t.insert(new Integer(i));
-        System.out.println("Inserts complete");
-
-        for(int i = 1; i < NUMS; i+= 2)
-            t.remove(new Integer(i));
-        System.out.println("Removes complete");
-
-        if(((Integer)(t.findMin())).intValue() != 2 ||
-            ((Integer)(t.findMax())).intValue() != NUMS - 2)
-            System.out.println("FindMin or FindMax error!");
-
-        for(int i = 2; i < NUMS; i+=2)
-            if(((Integer)t.find(new Integer(i))).intValue() != i)
-                System.out.println("Error: find fails for " + i);
-
-        for(int i = 1; i < NUMS; i+=2)
-            if(t.find(new Integer(i))  != null)
-                System.out.println("Error: Found deleted item " + i);
-    }
-
 }

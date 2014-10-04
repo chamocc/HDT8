@@ -142,10 +142,62 @@ public class RedBlackTree {
         }
     }
     
+    private TreeNode posicionIncertar(Word dato, TreeNode _raiz){
+        TreeNode nuevo=null;
+        if(dato.compareTo(_raiz.getDato())>0){
+            if(_raiz.getRelacion(1)==null){
+                nuevo=new TreeNode(_raiz, null, null, true, dato);
+                _raiz.setRelacion(nuevo, 1);
+            }else{
+                nuevo=posicionIncertar(dato, _raiz.getRelacion(1));
+            }
+        }else{
+            if(_raiz.getRelacion(2)==null){
+                nuevo=new TreeNode(_raiz, null, null, true, dato);
+                _raiz.setRelacion(nuevo, 2);
+            }else{
+                nuevo=posicionIncertar(dato, _raiz.getRelacion(2));
+            }
+        }
+        return nuevo;
+    }
+    
     public void incertarNodo(Word dato, TreeNode _raiz){
         if(raiz.getDato()==null){
-            raiz.setDato(dato);
-        
-        
+            raiz.setDato(dato);  
+        }else{
+            TreeNode hijo = posicionIncertar(dato, raiz);
+            if(hijo.getRelacion(0).getColor()==true){
+                TreeNode padre=hijo.getRelacion(0);
+                TreeNode abuelo=padre.getRelacion(0);
+                Word datoPadre, datoAbuelo;
+                datoPadre=padre.getDato();
+                datoAbuelo=abuelo.getDato();
+                if(datoPadre.compareTo(datoAbuelo)>0){
+                    //padre lado derecho
+                    if(abuelo.getRelacion(2).getColor()==false){
+                        if(dato.compareTo(datoPadre)>0){
+                            singleRotation(abuelo, true);
+                        }else{
+                            doubleRotation(abuelo, true);
+                        }  
+                    }else{
+                        cambiarColor(padre);
+                    }
+                }else{
+                    //padre lado izquierdo
+                    if(abuelo.getRelacion(1).getColor()==false){
+                        if(dato.compareTo(datoPadre)>0){
+                            doubleRotation(abuelo, false);
+                        }else{
+                            singleRotation(abuelo, false);
+                        }
+                    }else{
+                        cambiarColor(padre);
+                    }
+                }
+                
+            }
+        }
     }
 }

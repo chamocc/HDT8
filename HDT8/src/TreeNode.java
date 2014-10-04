@@ -30,6 +30,22 @@ public class TreeNode {
         dato=_dato;
     }
     
+    public void setColor(boolean _color){
+        color=_color;
+    }
+    
+    public boolean getColor(){
+        return color;
+    }
+    
+    public void flipColor(){
+        if(color==true){
+            color=false;
+        }else{
+            color=true;
+        }
+    }
+    
     public TreeNode getRelacion(int relacion){
         if(relacion==0){
             return padre;

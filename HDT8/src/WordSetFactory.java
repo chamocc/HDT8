@@ -6,9 +6,7 @@ Autor: Eduardo Castellanos
 
 Descripci�n: WordSetFactory. Clase  utilizada para instanciar los diferentes tipos de sets. 
 */
-import java.util.HashMap;
-import java.util.*;
-import java.util.TreeMap;
+
 class WordSetFactory {
 	
 	// Metodo que genera un objeto que implementa WordSet

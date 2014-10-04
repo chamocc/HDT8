@@ -8,19 +8,22 @@
  *
  * @author Ed. Chamo
  */
+import java.util.HashMap;
 public class HashMapSet implements WordSet {
-    public HashMapSet()
-    {
+    private HashMap arbol;
     
+    public HashMapSet(){
+        arbol=new HashMap();
     }
+
     @Override
     public void add(Word wordObject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       arbol.insert(wordObject);        //que metedo se usa aqui???
     }
 
     @Override
     public Word get(Word word) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (Word) arbol.get(word);
     }
     
 }

@@ -162,7 +162,7 @@ public class RedBlackTree {
         return nuevo;
     }
     
-    public void incertarNodo(Word dato, TreeNode _raiz){
+    public void incertarDato(Word dato){
         if(raiz.getDato()==null){
             raiz.setDato(dato);  
         }else{
@@ -199,5 +199,29 @@ public class RedBlackTree {
                 
             }
         }
+    }
+    
+    private Word buscarNodo(Word _dato, TreeNode _raiz){
+        Word datoObtenido=null;
+        if(_raiz.getDato().compareTo(_dato)==0){
+            datoObtenido=_raiz.getDato();
+        }else if(_dato.compareTo(_raiz.getDato())>0){
+            if(_raiz.getRelacion(1).getDato()==null){
+                datoObtenido=null;
+            }else{
+                datoObtenido=buscarNodo(_dato, _raiz.getRelacion(1));
+            }
+        }else if(_dato.compareTo(_raiz.getDato())<0){
+            if(_raiz.getRelacion(2).getDato()==null){
+                datoObtenido=null;
+            }else{
+                datoObtenido=buscarNodo(_dato, _raiz.getRelacion(2));
+            }
+        }
+        return datoObtenido;
+    }
+    
+    public Word buscarDato(Word _dato){
+        return buscarNodo(_dato, raiz);        
     }
 }

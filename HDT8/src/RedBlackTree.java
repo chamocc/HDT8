@@ -142,7 +142,10 @@ public class RedBlackTree {
         }
     }
     
-    public void incertarNodo(Word dato){
+    public void incertarNodo(Word dato, TreeNode _raiz){
+        if(raiz.getDato()==null){
+            raiz.setDato(dato);
+        
         
     }
 }

@@ -20,7 +20,7 @@ public class TreeMapSet implements WordSet {
 
     @Override
     public void add(Word wordObject) {
-       arbol.insert(wordObject);        //que metedo se usa aqui???
+       arbol.put(wordObject, wordObject);
     }
 
     @Override

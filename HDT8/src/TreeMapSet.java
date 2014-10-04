@@ -8,20 +8,23 @@
  *
  * @author Ed. Chamo
  */
+
+import java.util.TreeMap;
+
 public class TreeMapSet implements WordSet {
-    public TreeMapSet()
-    {
+    private TreeMap arbol;
     
+    public TreeMapSet(){
+        arbol=new TreeMap();
     }
-    
+
     @Override
     public void add(Word wordObject) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       arbol.insert(wordObject);        //que metedo se usa aqui???
     }
 
     @Override
     public Word get(Word word) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return (Word) arbol.get(word);
     }
-    
 }

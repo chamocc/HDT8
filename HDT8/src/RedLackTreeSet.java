@@ -9,10 +9,10 @@
  * @author Ed. Chamo
  */
 public class RedLackTreeSet implements WordSet {
-    private RedlackTree arbol;
+    private RBTPrueba2 arbol;
     
     public RedLackTreeSet(){
-        arbol=new RedlackTree();
+        arbol=new RBTPrueba2();
     }
 
     @Override

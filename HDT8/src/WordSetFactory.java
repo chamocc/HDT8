@@ -32,6 +32,7 @@ class WordSetFactory {
             else
 			
 			return new SimpleSet(); // nunca llega aqui
+            
 	}
 	
 	

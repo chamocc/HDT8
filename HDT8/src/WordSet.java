@@ -4,8 +4,9 @@ Algoritmos y Estructuras de Datos - 2011
 Hoja de trabajo 7 
 Autor: Eduardo Castellanos
 
-Descripción: WordSet. Interfaz para las implementaciones de clases que almacenarán palabras.
+Descripciï¿½n: WordSet. Interfaz para las implementaciones de clases que almacenarï¿½n palabras.
 */
+
 public interface WordSet {
 
 	public void add(Word wordObject);

@@ -25,9 +25,9 @@
          * Construct the tree.
          * @param negInf a value less than or equal to all others.
          */
-        public RedlackTree( Comparable negInf )
+        public RedlackTree( )
         {
-            header      = new RedBlackNode( negInf );
+            header      = new RedBlackNode( null);
             header.left = header.right = nullNode;
         }
 

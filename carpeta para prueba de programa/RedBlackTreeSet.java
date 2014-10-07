@@ -6,23 +6,23 @@
 
 /**
  *
- * @author Ed. Chamo
+ * @author Daniel
  */
-public class RedLackTreeSet implements WordSet {
-    private RedlackTree arbol;
+public class RedBlackTreeSet implements WordSet {
+    private RedBlackTree arbol;
     
-    public RedLackTreeSet(){
-        arbol=new RedlackTree();
+    public RedBlackTreeSet(){
+        arbol=new RedBlackTree();
     }
 
     @Override
     public void add(Word wordObject) {
-       arbol.insert(wordObject);
+       arbol.incertarDato(wordObject);
     }
 
     @Override
     public Word get(Word word) {
-        return (Word) arbol.find(word);
+        return arbol.buscarDato(word);
     }
     
 }

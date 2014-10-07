@@ -8,26 +8,21 @@
  *
  * @author Ed. Chamo
  */
-
-import java.util.TreeMap;
-
-public class TreeMapSet implements WordSet {
-    private TreeMap arbol;
-    private int x;
+public class RedBlackTreeSet1 implements WordSet {
+    private RedBlackTree1 arbol;
     
-    public TreeMapSet(){
-        arbol=new TreeMap();
-        x = 0;
+    public RedBlackTreeSet1(){
+        arbol=new RedBlackTree1(1);
     }
 
     @Override
     public void add(Word wordObject) {
-       arbol.put(wordObject, wordObject);
-       x++;
+       arbol.insert(wordObject);
     }
 
     @Override
     public Word get(Word word) {
-        return (Word) arbol.get(word);
+        return (Word) arbol.find(word);
     }
+    
 }

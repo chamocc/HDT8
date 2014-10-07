@@ -13,14 +13,17 @@ import java.util.TreeMap;
 
 public class TreeMapSet implements WordSet {
     private TreeMap arbol;
+    private int x;
     
     public TreeMapSet(){
         arbol=new TreeMap();
+        x = 0;
     }
 
     @Override
     public void add(Word wordObject) {
        arbol.put(wordObject, wordObject);
+       x++;
     }
 
     @Override

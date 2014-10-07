@@ -15,13 +15,11 @@ public class HashMapSet implements WordSet {
     
     public HashMapSet(){
         arbol=new HashMap();
-        x = 0;
     }
 
     @Override
     public void add(Word wordObject) {
-       arbol.put(wordObject , wordObject);
-       x++;
+       arbol.put(wordObject.getWord() , wordObject.getType());
     }
 
     @Override

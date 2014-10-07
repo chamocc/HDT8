@@ -22,7 +22,7 @@ public class TreeMapSet implements WordSet {
 
     @Override
     public void add(Word wordObject) {
-       arbol.put(wordObject, wordObject);
+       arbol.put(wordObject.getWord() , wordObject.getType());
        x++;
     }
 

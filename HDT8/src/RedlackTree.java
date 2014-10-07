@@ -250,10 +250,12 @@
         static final int BLACK = 1;    // Black must be 1
         static final int RED   = 0;
 
+        
             // Used in insert routine and its helpers
-        private static RedBlackNode current;
-        private static RedBlackNode parent;
-        private static RedBlackNode grand;
-        private static RedBlackNode great;
+        //private static RedBlackNode current;
+        //private static RedBlackNode parent;
+        //private static RedBlackNode grand;
+        //private static RedBlackNode great;
+        
         
         

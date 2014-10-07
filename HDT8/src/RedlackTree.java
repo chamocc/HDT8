@@ -252,10 +252,10 @@
 
         
             // Used in insert routine and its helpers
-        //private static RedBlackNode current;
-        //private static RedBlackNode parent;
-        //private static RedBlackNode grand;
-        //private static RedBlackNode great;
+        private static RedBlackNode current;
+        private static RedBlackNode parent;
+        private static RedBlackNode grand;
+        private static RedBlackNode great;
         
         
     }

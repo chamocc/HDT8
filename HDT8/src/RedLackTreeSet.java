@@ -8,12 +8,11 @@
  *
  * @author Ed. Chamo
  */
-public class SplayTreeSet implements WordSet {
+public class RedLackTreeSet implements WordSet {
+    private RedBlackTree1 arbol;
     
-    private SplayTree arbol;
-    
-    public SplayTreeSet(){
-        arbol=new SplayTree();
+    public RedLackTreeSet(){
+        arbol=new RedlackTree();
     }
 
     @Override
@@ -25,4 +24,5 @@ public class SplayTreeSet implements WordSet {
     public Word get(Word word) {
         return (Word) arbol.find(word);
     }
+    
 }

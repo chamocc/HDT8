@@ -10,8 +10,7 @@
  */
 import java.util.HashMap;
 public class HashMapSet implements WordSet {
-    private HashMap arbol;
-    private int x;
+    private HashMap<String, String> arbol;
     
     public HashMapSet(){
         arbol=new HashMap();
@@ -24,7 +23,9 @@ public class HashMapSet implements WordSet {
 
     @Override
     public Word get(Word word) {
-        return (Word) arbol.get(word);
+        if (!(arbol.containsKey(word.getWord())))
+            return null;
+        return new Word(word.getWord(),arbol.get(word.getWord()));
     }
     
 }

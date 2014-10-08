@@ -20,7 +20,7 @@ class WordSetFactory {
 	{
 	    if (tipo == 1)
 		return new SimpleSet();
-           /* if (tipo == 2)
+           if (tipo == 2)
                 return new RedLackTreeSet();
             if (tipo == 3)
                 return new SplayTreeSet();
@@ -28,7 +28,7 @@ class WordSetFactory {
                 return new HashMapSet();
             if (tipo == 5)
                 return new TreeMapSet();
-            */
+            
             else
 			
 			return new SimpleSet(); // nunca llega aqui

@@ -12,21 +12,24 @@
 import java.util.TreeMap;
 
 public class TreeMapSet implements WordSet {
-    private TreeMap <String, String> arbol;
+    private TreeMap <String, Word> arbol;
     
     public TreeMapSet(){
-        arbol=new TreeMap();
+        arbol=new TreeMap<String, Word>();
     }
 
     @Override
     public void add(Word wordObject) {
-       arbol.put(wordObject.getWord() , wordObject.getType());
+		String llave=wordObject.getWord();
+        arbol.put(llave, wordObject);
     }
 
     @Override
     public Word get(Word word) {
-        if (!(arbol.containsKey(word.getWord())))
-            return null;
-        return new Word(word.getWord(),arbol.get(word.getWord()));
+        if (arbol.containsKey(word.getWord())){
+			//System.out.println(arbol.get(word).getWord()+" palabra retornada");
+			return arbol.get(word.getWord());
+			}
+        return null;
     }
 }

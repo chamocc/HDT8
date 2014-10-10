@@ -10,22 +10,24 @@
  */
 import java.util.HashMap;
 public class HashMapSet implements WordSet {
-    private HashMap<String, String> arbol;
+    private HashMap<String, Word> arbol;
     
     public HashMapSet(){
-        arbol=new HashMap();
+        arbol=new HashMap<String, Word>();
     }
 
     @Override
     public void add(Word wordObject) {
-       arbol.put(wordObject.getWord() , wordObject.getType());
+		String llave=wordObject.getWord();
+        arbol.put(llave, wordObject);
     }
 
     @Override
     public Word get(Word word) {
         if (!(arbol.containsKey(word.getWord())))
             return null;
-        return new Word(word.getWord(),arbol.get(word.getWord()));
+		//System.out.println(arbol.get(word).getWord()+" palabra retornada");
+        return arbol.get(word.getWord());
     }
     
 }

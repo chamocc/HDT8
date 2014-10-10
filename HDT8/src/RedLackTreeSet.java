@@ -9,22 +9,23 @@
  * @author Ed. Chamo
  */
 public class RedLackTreeSet implements WordSet {
-    private RedBlackBST<Word,Word> arbol;
+    private RedBlackBST<String,Word> arbol;
     
     public RedLackTreeSet(){
-        arbol=new RedBlackBST<Word,Word>();
+        arbol=new RedBlackBST<String,Word>();
     }
 
     @Override
     public void add(Word wordObject) {
-       arbol.put(wordObject, wordObject);
+		String llave=wordObject.getWord();
+       arbol.put(llave, wordObject);
 	   
     }
 
     @Override
     public Word get(Word word) {
-        if(arbol.contains(word)){
-			return arbol.get(word);
+        if(arbol.contains(word.getWord())){
+			return arbol.get(word.getWord());
 		}else{
 			return null;
 		}

@@ -4,31 +4,31 @@ Algoritmos y Estructuras de Datos - 2011
 Hoja de trabajo 7
 Autor: Eduardo Castellanos
 
-Descripciï¿½n: Programa principal. 
+Descripción: Programa principal. 
 */
 import java.io.*;
 
 class WordTypeCounter {
 	public static void main(String[] args) throws Exception
 	{
-		//if(args.length > 1)
+		if(args.length > 1)
 		{
-			// Declaraciï¿½n e inicializaciï¿½n de variables.
+			// Declaración e inicialización de variables.
 			// el primer parametro indica el nombre del archivo con las definiciones de las palabras
-			File wordFile = new  File("files\\words.txt");//File(args[0]);
+			File wordFile = new File(args[0]);
 			
 			// el segundo parametro indica el nombre del archivo que tiene el texto a analizar
-			File textFile = new File("files\\text.txt"); //File(args[1]);
+			File textFile = new File(args[1]);
 			
 			// el tercer parametro sirve para seleccionar la implementacion que se usara para
 			// guardar el conjunto de palabras. Use el valor 1 para indicar que se empleara
-			// la implementacion SimpleSet que acompaï¿½a esta tarea.
+			// la implementacion SimpleSet que acompaña esta tarea.
 			// Para el resto de implementaciones: 
 			//  2 Red Black Tree
 			//  3 Splay Tree
 			//  4 Hash Table
 			//  5 TreeMap (de java collection framework)
-			int implementacion = 1;
+			int implementacion = Integer.parseInt(args[2]);
 			
 			BufferedReader wordreader;
 			BufferedReader textreader;
@@ -42,7 +42,7 @@ class WordTypeCounter {
 			long starttime;
 			long endtime;
 			
-			// Verificar que los dos parï¿½metros que se pasaron sean archivos que existen
+			// Verificar que los dos parámetros que se pasaron sean archivos que existen
 			if(wordFile.isFile() && textFile.isFile()) {
 				// Leer archivos
 				try
@@ -71,7 +71,7 @@ class WordTypeCounter {
 				line = wordreader.readLine();
 				while(line!=null)
 				{
-					wordParts = line.split("\\.");  // lo que esta entre comillas es una expresiï¿½n regular.
+					wordParts = line.split("\\.");  // lo que esta entre comillas es una expresión regular.
 					if(wordParts.length == 2)
 					{
 						words.add(new Word(wordParts[0].trim(),wordParts[1].trim()));
@@ -92,8 +92,8 @@ class WordTypeCounter {
 				
 				while(line!=null)
 				{
-					// Separar todas las palabras en la lï¿½nea.
-					textParts = line.split("[^\\w-]+"); // utilizar de separador cualquier caracter que no sea una letra, nï¿½mero o guiï¿½n.
+					// Separar todas las palabras en la línea.
+					textParts = line.split("[^\\w-]+"); // utilizar de separador cualquier caracter que no sea una letra, número o guión.
 					
 					// Revisar cada palabra y verificar de que tipo es. 
 					for(int i=0;i<textParts.length;i++)
@@ -121,7 +121,7 @@ class WordTypeCounter {
 				endtime = System.currentTimeMillis();
 				System.out.println("Texto analizado en " + (endtime-starttime) + " ms.");
 				
-				// Presentar estadï¿½sticas
+				// Presentar estadísticas
 				System.out.println("El texto tiene:");
 				System.out.println(verbs + " verbos");
 				System.out.println(nouns + " sustantivos");
@@ -135,9 +135,9 @@ class WordTypeCounter {
 				System.out.println("No encuentro los archivos :'( ");
 			}
 		}
-		//else
+		else
 		{
-			//System.out.println("Faltan Parametros.");
+			System.out.println("Faltan Parametros.");
 		}
 	}
 }
